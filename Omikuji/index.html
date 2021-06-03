@@ -7,9 +7,10 @@
 <body>
     <input id="omikuji_btn" type="button" value="おみくじを引く">
     <script>
-        document.getElementById("omikuji_btn").onclick = function() {
-    alert("JavaScriptでプログラミングするよ！");
-}
+        document.getElementById( "omikuji_btn" ).onclick = function() {
+            var rnd = Math.floor( Math.random() * 10 );
+            alert(rnd);
+        }
     </script>
 </body>
 </html>
