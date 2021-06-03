@@ -10,7 +10,10 @@
         document.getElementById( "omikuji_btn" ).onclick = function() {
             var date = new Date();
             var year = date.getFullYear();
-            alert( year );
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var eom = new Date( year, month, 0 ).getDate();
+            alert( eom - day );
         }
     </script>
 </body>
