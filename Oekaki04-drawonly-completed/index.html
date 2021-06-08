@@ -1,0 +1,35 @@
+<DOCTYPE HTML5>
+    <html>
+     <head>
+        
+      <!--CSSファイルの読み込み-->
+      <link rel="stylesheet" type="text/css" href="./index.css">
+      <title>Hazardmap Test 04</title>
+     </head>
+     <body>
+        <h1>Hazardmap Test 04b</h1>
+        
+        <div>
+            <!--canvasの描画-->
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div>
+            <button id="clear-button">全消し</button>
+        </div>
+        <!-- <div>
+            <button id="eraser-button">消しゴムモード</button>
+        </div> -->
+ 
+        <!--ファイルの読み込み　拡張子をPNG, JPEGに設定-->
+        <div>
+        <input type="file" id="selectFile" accept=".png,.jpeg">
+        </div>
+
+        <!-- 色変更に使うライブラリを導入 https://github.com/bebraw/colorjoe
+        <script src="colorjoe.min.js"></script> -->
+        <!--.jsファイルの読み込み-->
+        <script type="text/javascript" src="index.js"></script>
+     </body>
+    </html>
+    
