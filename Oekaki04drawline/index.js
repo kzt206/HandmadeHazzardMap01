@@ -2,13 +2,13 @@
 // https://qiita.com/tsuyopon_xyz/items/1df124d4ecec69bd4fff  
 
 var selFile = document.getElementById('selectFile'); // input type="file"の要素取得
-const canvasPic = document.getElementById('canvas-pic'); // canvasの要素取得
+const canvas = document.getElementById('canvas'); // canvasの要素取得
 // const canvasDraw = document.querySelector('canvas-draw');
-const ctx = canvasPic.getContext('2d');
+const ctx = canvas.getContext('2d');
 
 //キャンバスサイズの指定
-canvasPic.width = 1007;
-canvasPic.height = 703;
+canvas.width = 1007;
+canvas.height = 703;
 
 
 selFile.addEventListener("change", function(evt){
@@ -30,7 +30,7 @@ selFile.addEventListener("change", function(evt){
    // ctx.drawImage(img, 0, 0);
 
    // 画像のサイズを設定する場合
-   ctx.drawImage(img, 0, 0, canvasPic.width, canvasPic.height); heightとwidthも合わせて設定可能
+   ctx.drawImage(img, 0, 0, canvas.width, canvas.height); heightとwidthも合わせて設定可能
    }
   }
 }, false);
@@ -39,7 +39,7 @@ selFile.addEventListener("change", function(evt){
 // ページの読み込みが完了したらコールバック関数が呼ばれる
 // ※コールバック: 第2引数の無名関数(=関数名が省略された関数)
 window.addEventListener('load', () => {
-  const canvas = document.querySelector('canvas-draw');
+  const canvas = document.querySelector('canvas');
   canvas.width = 1007;
   canvas.height = 703;
   // contextを使ってcanvasに絵を書いていく
