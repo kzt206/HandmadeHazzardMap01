@@ -27,8 +27,12 @@
     border: solid 3px #f00;
   }
 
+/* #canvas-forward{
+    border: solid 2px #005;
+} */
+
 .buttons{
     position: relative;
     top: 720px
     /* border: solid 4px #000 */
-}
+} 
