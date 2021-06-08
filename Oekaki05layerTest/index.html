@@ -13,9 +13,19 @@
 <body>
     <h1>Hazardmap Test 05</h1>
     
+
     <div class="canvas-wrap">
-        <canvas class="canvas" width="600" height="300"></canvas>
-        <canvas class="canvas" width="600" height="300"></canvas>
+        <canvas class="canvas" id="canvas-back" ></canvas>
+        <canvas class="canvas" id="canvas-back2" ></canvas>
+        <!-- <canvas class="canvas" id="canvas-forward"></canvas> -->
+    </div>
+
+    <div class="buttons">
+        <button id="clear-button">全消し</button>
+    
+    <!--ファイルの読み込み　拡張子をPNG, JPEGに設定-->
+        <input type="file" id="selectFile1" accept=".png,.jpeg">
+        <input type="file" id="selectFile2" accept=".png,.jpeg">
     </div>
 
     <script src="./main.js"></script>
