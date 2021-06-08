@@ -3,16 +3,32 @@
      <head>
       <!--CSSファイルの読み込み-->
       <link rel="stylesheet" type="text/css" href="./index.css">
+      <title>Hazardmap Test 04</title>
      </head>
      <body>
-      <!--ファイルの読み込み　拡張子をPNG, JPEGに設定-->
-      <input type="file" id="selectFile" accept=".png,.jpeg">
-    
-      <!--canvasの描画-->
-      <canvas id="canvas"><canvas>
-    
-      <!--.jsファイルの読み込み-->
-      <script type="text/javascript" src="index.js"></script>
+        <h1>Hazardmap Test 04b</h1>
+        
+        <div>
+            <!--canvasの描画-->
+            <canvas id="canvas"><canvas>
+            <!-- 色を選択できるカラーパレットを用意する。 -->
+            <span id="color-palette"></span>
+        </div>
+
+        <div>
+            <button id="clear-button">全消し</button>
+        </div>
+        <div>
+            <button id="eraser-button">消しゴムモード</button>
+        </div>
+ 
+        <!--ファイルの読み込み　拡張子をPNG, JPEGに設定-->
+        <div>
+        <input type="file" id="selectFile" accept=".png,.jpeg">
+        </div>
+
+        <!--.jsファイルの読み込み-->
+        <script type="text/javascript" src="index.js"></script>
      </body>
     </html>
     
