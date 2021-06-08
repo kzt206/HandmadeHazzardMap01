@@ -1,5 +1,5 @@
 // https://qiita.com/No_LINE/items/d3a9dada9f98a7819693
-// 
+// https://qiita.com/tsuyopon_xyz/items/1df124d4ecec69bd4fff  
 
 var selFile = document.getElementById('selectFile'); // input type="file"の要素取得
 var c = document.getElementById('canvas'); // canvasの要素取得
