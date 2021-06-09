@@ -52,4 +52,31 @@ window.addEventListener("load",()=>{
     ctx01.fillRect(30,50,30,20);
 
 
+    //Draw Lines
+     // 直前のマウスのcanvas上のx座標とy座標を記録する
+    const lastPosition = { x: null, y: null };
+
+    // マウスがドラッグされているか(クリックされたままか)判断するためのフラグ
+    let isDrag = false;
+
+    function startPosition(){
+        isDrag = true;
+    }
+    function finishedPosition(){
+        isDrag = false;
+    }
+
+    function draw(e){
+        if(!isDrag) return;
+        ctx02.lineWidth = 10;
+        ctx02.lineCap  = "round";
+
+        ctx02.lineTo(e.clientX-canvas01.width,e.clientY);
+        ctx02.stroke();
+    }
+
+    canvas02.addEventListener("mousedown",startPosition);
+    canvas02.addEventListener("mouseup",finishedPosition);
+    canvas02.addEventListener("mousemove",draw);
+
 });
