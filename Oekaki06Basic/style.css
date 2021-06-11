@@ -1,8 +1,20 @@
+.canvas-wrap{
+    position: relative;
+}
+
 
 #canvas01{
+    position:absolute;
+
     border: solid 1px blue;
 }
 
 #canvas02{
+    position:absolute;
     border: solid 2px green;
+}
+
+.buttons{
+    position: relative;
+    top: 500px;
 }

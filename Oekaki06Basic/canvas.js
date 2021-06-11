@@ -5,21 +5,14 @@ window.addEventListener("load",()=>{
     const canvas02 = document.querySelector("#canvas02");
     const ctx02 = canvas02.getContext("2d");
 
-   canvas01.width = 300;
-   canvas01.height = 200;
+   canvas01.width = 800;
+   canvas01.height = 400;
 
-   canvas02.width = 500;
-   canvas02.height = 300;
+   canvas02.width = 800;
+   canvas02.height = 400;
    
-    ctx01.fillRect(10,10,30,20);
+    // ctx01.fillRect(10,10,30,20);
     // ctx02.fillRect(20,30,50,100);
-
-    console.log("hello");
-
-    const buttonTest = document.getElementById("testButton");
-    buttonTest.addEventListener("click",function(event){
-        console.log("button pushed");
-    });
 
     const selectFile01 = document.getElementById("selectFile01");
     selectFile01.addEventListener("change",function(evt){
@@ -47,9 +40,9 @@ window.addEventListener("load",()=>{
 
     },false);
 
-    console.log("hello2");
+    // console.log("hello2");
     // ctx01.drawImage(img,0,0,canvas01.width,canvas01.heigth);
-    ctx01.fillRect(30,50,30,20);
+    // ctx01.fillRect(30,50,30,20);
 
 
     //Draw Lines
@@ -68,15 +61,23 @@ window.addEventListener("load",()=>{
 
     function draw(e){
         if(!isDrag) return;
-        ctx02.lineWidth = 10;
+        ctx02.lineWidth = 5;
         ctx02.lineCap  = "round";
-
-        ctx02.lineTo(e.clientX-canvas01.width,e.clientY);
+        
+        ctx02.lineTo(e.clientX,e.clientY);
         ctx02.stroke();
     }
 
     canvas02.addEventListener("mousedown",startPosition);
     canvas02.addEventListener("mouseup",finishedPosition);
     canvas02.addEventListener("mousemove",draw);
+
+
+    const clearButton = document.getElementById("clearButton");
+    clearButton.addEventListener("click",clear);
+
+    function clear(){
+        ctx02.clearRect(0,0,canvas02.width,canvas02.height)
+    }
 
 });
