@@ -1,5 +1,13 @@
 window.addEventListener("load",()=>{
 
+    const colorCircle = document.querySelectorAll(".color-circle");
+
+    let penSize = 10;
+    let isDrawing;
+    let x;
+    let y;
+
+
     const canvas01 = document.querySelector("#canvas01");
     const ctx01 = canvas01.getContext("2d");
     const canvas02 = document.querySelector("#canvas02");
@@ -52,28 +60,47 @@ window.addEventListener("load",()=>{
     // マウスがドラッグされているか(クリックされたままか)判断するためのフラグ
     let isDrag = false;
 
-    function startPosition(){
-        isDrag = true;
-    }
-    function finishedPosition(){
-        isDrag = false;
+    ctx02.fillStyle = "hotpink";
+    ctx02.strokeStyle = ctx02.fillStyle;
+
+    function draw(x2,y2){
+        if(isDrag){
+            ctx02.beginPath();
+            ctx02.arc(x2,y2,penSize,0,Math.PI * 2);
+            ctx02.closePath();
+            ctx02.fill();
+            //draw line
+            drawLine(x,y,x2,y2);
+        }
+        x = x2;
+        y = y2;
     }
 
-    function draw(e){
-        if(!isDrag) return;
-        ctx02.lineWidth = 5;
-        ctx02.lineCap  = "round";
-        
-        ctx02.lineTo(e.offsetX,e.offsetY);
+    function drawLine(x1,y1,x2,y2){
+        ctx02.beginPath();
+        ctx02.moveTo(x1,y1);
+        ctx02.lineTo(x2,y2);
+        ctx02.strokeStyle = ctx02.fillStyle;
+        ctx02.lineWidth = penSize * 2;
         ctx02.stroke();
-
-        // console.log("clinet",e.clientX,e.clientY);
-        // console.log(e.offsetX,e.offsetY);
     }
 
-    canvas02.addEventListener("mousedown",startPosition);
-    canvas02.addEventListener("mouseup",finishedPosition);
-    canvas02.addEventListener("mousemove",draw);
+    canvas02.addEventListener("mousedown",(e)=>{
+        isDrag = true;
+        x = e.offsetX;
+        y = e.offsetY;
+
+        // console.log(x,y)
+    });
+
+    canvas02.addEventListener("mouseup",()=>{
+        isDrag = false;
+        x = undefined;
+        y = undefined;
+    });
+    canvas02.addEventListener("mousemove",(event)=>{
+        draw(event.offsetX,event.offsetY);
+    });
 
 
     const clearButton = document.getElementById("clearButton");
