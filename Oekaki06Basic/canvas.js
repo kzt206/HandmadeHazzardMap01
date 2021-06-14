@@ -155,13 +155,33 @@ var createImage = function(context){
 // contextSave.drawImage(createImage(ctx02),0,0);
 
 const canvas03 = document.getElementById("canvas03");
-canvas03.width = 200;
-canvas03.height = 300;
-const contextSave = canvas03.getContext("2d");
+canvas03.width = 100;
+canvas03.height = 200;
+const context03 = canvas03.getContext("2d");
 
 
 document.querySelector("a").addEventListener("click",(event)=> event.target.href = canvas02.toDataURL());
-document.getElementById("contact").addEventListener("click",(event)=> console.log("contact clicked"));
+document.getElementById("contact").addEventListener("click",(event)=>{
+    console.log("test");
+    let dataURL01 = canvas01.toDataURL();
+    let img01 = new Image();
+    let dataURL02 = canvas02.toDataURL();
+    let img02 = new Image();
+
+    img01.src = dataURL01;
+    img02.src = dataURL02;
+    
+    let img03 = new Image();
+
+    img02.onload = function(){
+        context03.drawImage(img02,0,0,canvas03.width,canvas03.height);
+        // image02.onload = function(){
+        //     context03.drawImage(img02,0,0,canvas03.width,canvas03.height);
+        // }
+       
+    }
+    event.target.href = canvas03.toDataURL();
+});
 document.getElementById("save01").addEventListener("click",(event)=> event.target.href = canvas01.toDataURL());
 document.getElementById("save02").addEventListener("click",(event)=> event.target.href = canvas02.toDataURL());
 
