@@ -1,6 +1,6 @@
-window.addEventListener("load",()=>{
+const colorCircle = document.querySelectorAll(".color-circle");
 
-    const colorCircle = document.querySelectorAll(".color-circle");
+//window.addEventListener("load",()=>{
 
     let penSize = 10;
     let isDrawing;
@@ -43,7 +43,7 @@ window.addEventListener("load",()=>{
             img.onload = function(){
                 ctx01.drawImage(img,0,0,canvas01.width,canvas01.height);
             }
-            ctx02.fillRect(50,90,30,20);
+            // ctx02.fillRect(50,90,30,20);
         }
 
     },false);
@@ -114,4 +114,21 @@ window.addEventListener("load",()=>{
         ctx02.clearRect(0, 0,canvas02.width,canvas02.height);
     });
 
-});
+
+
+//});
+
+const selectColor = (elem) => {
+
+    removeActiveCircleColor();
+
+    ctx02.fillStyle = elem.getAttribute("data-color");
+    elem.classList.add("active");
+};
+
+const removeActiveCircleColor = () =>{
+    colorCircle.forEach((circle)=>{
+        circle.classList.remove("active");
+    });
+};
+
