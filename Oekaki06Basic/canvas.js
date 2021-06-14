@@ -64,8 +64,11 @@ window.addEventListener("load",()=>{
         ctx02.lineWidth = 5;
         ctx02.lineCap  = "round";
         
-        ctx02.lineTo(e.clientX,e.clientY);
+        ctx02.lineTo(e.offsetX,e.offsetY);
         ctx02.stroke();
+
+        // console.log("clinet",e.clientX,e.clientY);
+        // console.log(e.offsetX,e.offsetY);
     }
 
     canvas02.addEventListener("mousedown",startPosition);
