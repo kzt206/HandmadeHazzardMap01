@@ -18,6 +18,12 @@
     border: solid 3px green;
 }
 
+#canvas03{
+    position: relative;
+    border: solid 3px yellow;
+    top: 600px;
+}
+
 .buttons{
     position: relative;
     top: 600px;

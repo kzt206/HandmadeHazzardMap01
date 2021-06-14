@@ -141,4 +141,34 @@ function penSizeChange(pensize){
     penSize = pensize
 }
 
-document.querySelector("a").addEventListener("click",(event)=> event.target.href = canvas01.toDataURL());
+
+var createImage = function(context){
+    console.log(context)
+    var image = new Image();
+    // context.fillRect(0,10,20,20);
+    image.src = context.canvas.toDataURL();
+    return image;
+}
+
+// var contextSave = document.createElement("canvas").getContext("2d");
+// contextSave.drawImage(createImage(ctx01),0,0);
+// contextSave.drawImage(createImage(ctx02),0,0);
+
+const canvas03 = document.getElementById("canvas03");
+canvas03.width = 200;
+canvas03.height = 300;
+const contextSave = canvas03.getContext("2d");
+
+
+document.querySelector("a").addEventListener("click",(event)=> event.target.href = canvas02.toDataURL());
+document.getElementById("contact").addEventListener("click",(event)=> console.log("contact clicked"));
+
+// document.querySelector("a").addEventListener("click",(event)=> {
+//     console.log("save mode")
+//     // contextSave = document.createElement("canvas").getContext("2d");
+//     contextSave.drawImage(createImage(ctx01),0,0,canvas03.width, canvas03.height);
+//     contextSave.drawImage(createImage(ctx02),0,0,canvas03.width, canvas03.height);
+//     document.body.appendChild(createImage(contextSave))
+//     event.target.href = contextSave.canvas.toDataURL()
+// });
+
