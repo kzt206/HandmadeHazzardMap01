@@ -1,0 +1,24 @@
+.canvas-wrap{
+    position: relative;
+}
+
+
+#canvas01{
+    position:absolute;
+    /* top:100px; */
+    /* left:200px; */
+    /* margin-left: 200; */
+    border: dashed 3px blue;
+}
+
+#canvas02{
+    position:absolute;
+    /* padding:100; */
+    /* margin-left: 500; */
+    border: solid 3px green;
+}
+
+.buttons{
+    position: relative;
+    top: 500px;
+}

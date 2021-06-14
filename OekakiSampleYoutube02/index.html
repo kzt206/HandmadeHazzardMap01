@@ -1,0 +1,46 @@
+<!-- https://www.youtube.com/watch?v=8z8cNzQ7uhE&t=304s -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Painting App</title>
+</head>
+<body>
+    <p>Paint by holding down the mouse button and moving it.
+        <a href="" download="my_painting.png" >Download my painting</a>
+        <i class="fa fa-refresh refresh-btn"><strong>Clear</strong></i>
+    </p>
+    <div id="pen-tools" class="pen-tools">
+            <div id="drawing-colors" class="drawing-colors">
+                <div class="color-circle active" data-color="hotpink" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="orange" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="red" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="yellow" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="black" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="white" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="blue" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="green" onclick="selectColor(this)"></div>
+            </div>
+            <div id="favContainer"> <label for="favcolor">Select your favourite color:</label>
+                <input type="color" name="favcolor" id="favcolor" value="#ff0000" onchange="favColor(this)">
+            </div>
+            <div id="pen-size" class="pen-size">
+                <label for="pen-size"><i class="fa fa-pencil"></i>Pen size</label>
+                <input type="range" name="pen-size" id="pen-size" value="10" step="5" min="5" max="40" onchange="penSizeChange(this.value)">
+            </div>
+    </div>
+
+    <div class="board">
+        <canvas width="800px" height="590px"></canvas>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
