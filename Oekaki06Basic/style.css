@@ -5,13 +5,17 @@
 
 #canvas01{
     position:absolute;
-
-    border: solid 1px blue;
+    /* top:100px; */
+    /* left:200px; */
+    /* margin-left: 200; */
+    border: dashed 3px blue;
 }
 
 #canvas02{
     position:absolute;
-    border: solid 2px green;
+    /* padding:100; */
+    /* margin-left: 500; */
+    border: solid 3px green;
 }
 
 .buttons{
