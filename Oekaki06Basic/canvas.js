@@ -2,7 +2,7 @@ const colorCircle = document.querySelectorAll(".color-circle");
 
 //window.addEventListener("load",()=>{
 
-    let penSize = 10;
+    let penSize = 4;
     let isDrawing;
     let x;
     let y;
@@ -136,3 +136,7 @@ const favColor = (elem) => {
     removeActiveCircleColor();
     ctx02.fillStyle = elem.value;
 };
+
+function penSizeChange(pensize){
+    penSize = pensize
+}
