@@ -103,11 +103,15 @@ window.addEventListener("load",()=>{
     });
 
 
-    const clearButton = document.getElementById("clearButton");
-    clearButton.addEventListener("click",clear);
+    // const clearButton = document.getElementById("clearButton");
+    // clearButton.addEventListener("click",clear);
 
-    function clear(){
-        ctx02.clearRect(0,0,canvas02.width,canvas02.height)
-    }
+    // function clear(){
+    //     ctx02.clearRect(0,0,canvas02.width,canvas02.height)
+    // }
+
+    document.querySelector(".fa-refresh").addEventListener("click",function(){
+        ctx02.clearRect(0, 0,canvas02.width,canvas02.height);
+    });
 
 });
