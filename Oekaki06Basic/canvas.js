@@ -132,3 +132,7 @@ const removeActiveCircleColor = () =>{
     });
 };
 
+const favColor = (elem) => {
+    removeActiveCircleColor();
+    ctx02.fillStyle = elem.value;
+};
