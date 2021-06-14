@@ -140,3 +140,5 @@ const favColor = (elem) => {
 function penSizeChange(pensize){
     penSize = pensize
 }
+
+document.querySelector("a").addEventListener("click",(event)=> event.target.href = canvas01.toDataURL());
