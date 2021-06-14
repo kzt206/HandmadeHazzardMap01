@@ -162,6 +162,8 @@ const contextSave = canvas03.getContext("2d");
 
 document.querySelector("a").addEventListener("click",(event)=> event.target.href = canvas02.toDataURL());
 document.getElementById("contact").addEventListener("click",(event)=> console.log("contact clicked"));
+document.getElementById("save01").addEventListener("click",(event)=> event.target.href = canvas01.toDataURL());
+document.getElementById("save02").addEventListener("click",(event)=> event.target.href = canvas02.toDataURL());
 
 // document.querySelector("a").addEventListener("click",(event)=> {
 //     console.log("save mode")
