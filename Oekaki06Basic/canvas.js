@@ -14,10 +14,10 @@ const colorCircle = document.querySelectorAll(".color-circle");
     const ctx02 = canvas02.getContext("2d");
 
    canvas01.width = 800;
-   canvas01.height = 400;
+   canvas01.height = 560;
 
    canvas02.width = 800;
-   canvas02.height = 400;
+   canvas02.height = 560;
    
     // ctx01.fillRect(10,10,30,20);
     // ctx02.fillRect(20,30,50,100);
