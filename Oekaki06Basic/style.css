@@ -1,3 +1,10 @@
+#page-title{
+    font-size: 20px;
+    background-color:#69c;
+    color:white;
+    padding:10px;
+}
+
 .canvas-wrap{
     position: relative;
 }
@@ -15,7 +22,7 @@
     position:absolute;
     /* padding:100; */
     /* margin-left: 500; */
-    border: solid 3px green;
+    border: solid 2px green;
 }
 
 #canvas03{
