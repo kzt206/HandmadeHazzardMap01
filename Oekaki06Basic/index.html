@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
-    <title>Oekaki06</title>
+    <title>Oekaki06 branch01</title>
 </head>
 <body>
+    <p>
+        <strong  id="page-title">手作りハザードマップアプリ　シンプル版（試作中）</strong>
+    </p>
+    <p>Paint by holding down the mouse button and moving it.<br>
+        <a href="" download="my_painting.png" >Download my painting</a>
+        <a href="" download="canvas01.png" id="save01">Download01</a>
+        <a href="" download="canvas02.png" id="save02">Download02</a>
+        <a href="" download="canvas03.png" id="contact">Contact canvas</a>
+        <i class="fa fa-refresh refresh-btn"><strong>Clear</strong></i>
+    </p>
+    <div id="pen-tools" class="pen-tools">
+            <div id="drawing-colors" class="drawing-colors">
+                <div class="color-circle active" data-color="hotpink" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="orange" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="red" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="yellow" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="black" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="white" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="blue" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="green" onclick="selectColor(this)"></div>
+            </div>
+            <div id="favContainer"> <label for="favcolor">Select your favourite color:</label>
+                <input type="color" name="favcolor" id="favcolor" value="#ff0000" onchange="favColor(this)">
+            </div>
+            <div id="pen-size" class="pen-size">
+                <label for="pen-size"><i class="fa fa-pencil"></i>Pen size</label>
+                <input type="range" name="pen-size" id="pen-size" value="4" step="1" min="1" max="8" onchange="penSizeChange(this.value)">
+            </div>
+    </div>
+
     <div class="canvas-wrap">
         <canvas id="canvas01"></canvas>
         <canvas id="canvas02"></canvas>
@@ -16,8 +49,12 @@
     <div class="buttons">
         <input type="file" id="selectFile01" accept=".png,.jpeg">
 
-        <button id="clearButton">Paint Clear</button>
+        <!-- <button id="clearButton">Paint Clear</button> -->
     </div>
+
+    <canvas id="canvas03"></canvas>
+    
+    
 
     <script src="canvas.js"></script>
 </body>
