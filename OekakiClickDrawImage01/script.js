@@ -25,11 +25,41 @@
 //     this.ctx.fill();
 
 // });
+
+
+window.onload = () =>{
+    // canvas準備
+  const board = document.querySelector("#canvas1");  //getElementById()等でも可。オブジェクトが取れれば良い。
+  const ctx = board.getContext("2d");
+
+  // 画像読み込み
+  const chara = new Image();
+  chara.src = "pin2.png";  // 画像のURLを指定
+  chara.onload = () => {
+    ctx.drawImage(chara, 100, 150);
+  };
+
+  this.canvas1.addEventListener("click",(e) => {
+      let x = e.offsetX;
+      let y = e.offsetY;
+
+      console.log("x:",x,"y:",y);
+      ctx.drawImage(chara,x,y);
+  })
+
+};
+
+/*
 window.addEventListener('load',()=>{
 
     const canvas1 = document.querySelector('#canvas1');
     const context1 = canvas1.getContext('2d');
 
+    let img2 = new Image();
+    img2.src = "pin2.png";
+    img2.onload = function(){
+        context1.drawImage(img2,0,0);
+    }
      // マウス操作やボタンクリック時のイベント処理を定義する
   
         this.canvas1.addEventListener("click", (e) => {
@@ -60,3 +90,4 @@ window.addEventListener('load',()=>{
     
 
 });
+*/
